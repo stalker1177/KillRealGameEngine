@@ -154,7 +154,6 @@ void SSAOPass::render(Renderer* renderer, SystemsModule::RenderDataHandle& rende
 	}
 	ImGui::End();
 
-	glViewport(0, 0, Renderer::SCR_WIDTH, Renderer::SCR_HEIGHT);
 	glBindFramebuffer(GL_FRAMEBUFFER, mData.mSsaoFbo);
 	glClear(GL_COLOR_BUFFER_BIT);
 	shaderSSAO->use();

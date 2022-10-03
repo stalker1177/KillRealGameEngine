@@ -57,6 +57,13 @@ void Renderer::init() {
 	cube2->getComponent<TransformComponent>()->setPos({-10.f,0.f,0.f});
 	cube2->init(cubeModel->mMeshTree);
 	node->addElement(cube2);
+	auto cube3 = ecsModule::ECSHandler::entityManagerInstance()->createEntity<EntitiesModule::Model>();
+	cube3->setNodeId("wall");
+	cube3->getComponent<TransformComponent>()->setScale({ 0.01f,0.1f,5.f });
+	cube3->getComponent<TransformComponent>()->setPos({ -10.f,0.f,0.f });
+	cube3->getComponent<TransformComponent>()->setRotateY(90.f);
+	cube3->init(cubeModel->mMeshTree);
+	node->addElement(cube3);
 
 	auto sponza = ModelLoader::getInstance()->load("models/sponza/scene.gltf");
 	auto sponzaModel = ecsModule::ECSHandler::entityManagerInstance()->createEntity<EntitiesModule::Model>();
